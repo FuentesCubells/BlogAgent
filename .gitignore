@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.nest/
+
+# Environment — NUNCA versionar el .env real
+.env
+.env.local
+.env.*.local
+
+# Lockfiles alternativos — este proyecto usa pnpm; ignorar los de otros gestores
+package-lock.json
+yarn.lock
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# SSL certs locales
+certs/
+
+# Test coverage
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE — se versionan extensions.json y launch.json (útiles para el equipo)
+# solo se ignoran los ficheros de preferencias personales
+.vscode/settings.json
+.vscode/*.code-workspace
+.idea/
+*.sw?
