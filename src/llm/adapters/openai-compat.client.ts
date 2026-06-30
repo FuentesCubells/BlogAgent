@@ -1,5 +1,5 @@
 import OpenAI from 'openai';
-import { LlmClient } from '../llm-client.interface';
+import { LlmClient, LlmOptions } from '../llm-client.interface';
 import { LlmMessage, LlmResult, LlmTool } from '../llm.types';
 
 /**
@@ -12,11 +12,17 @@ export class OpenAiCompatClient implements LlmClient {
     private readonly model: string,
   ) {}
 
-  async complete(messages: LlmMessage[], tools?: LlmTool[]): Promise<LlmResult> {
+  async complete(
+    messages: LlmMessage[],
+    tools?: LlmTool[],
+    options?: LlmOptions,
+  ): Promise<LlmResult> {
     const res = await this.sdk.chat.completions.create({
       model: this.model,
       messages: messages.map(toOpenAiMessage),
       tools: tools?.map(toOpenAiTool),
+      temperature: options?.temperature,
+      max_tokens: options?.maxTokens, // Ollama entiende max_tokens; max_completion_tokens lo ignora
     });
 
     const choice = res.choices[0];

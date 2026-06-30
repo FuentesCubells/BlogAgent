@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { LLM_CLIENT, LlmClient } from './llm-client.interface';
+import { LLM_CLIENT, LlmClient, LlmOptions } from './llm-client.interface';
 import { LlmMessage } from './llm.types';
 import { AgentTool } from './tools/tool.interface';
 
@@ -13,7 +13,12 @@ export class LlmToolRunner {
 
   constructor(@Inject(LLM_CLIENT) private readonly llm: LlmClient) {}
 
-  async run(userPrompt: string, tools: AgentTool[]): Promise<string> {
+  async run(
+    systemPrompt: string,
+    userPrompt: string,
+    tools: AgentTool[],
+    options?: LlmOptions,
+  ): Promise<string> {
     const toolMap = new Map(tools.map((t) => [t.name, t]));
     // Lo que ve el modelo: metadatos sin la función execute
     const llmTools = tools.map(({ name, description, parameters }) => ({
@@ -22,11 +27,14 @@ export class LlmToolRunner {
       parameters,
     }));
 
-    const messages: LlmMessage[] = [{ role: 'user', content: userPrompt }];
+    const messages: LlmMessage[] = [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userPrompt },
+    ];
 
     // Tope de seguridad: NUNCA while(true) en un agente que corre solo por cron
     for (let turn = 0; turn < this.MAX_TURNS; turn++) {
-      const result = await this.llm.complete(messages, llmTools);
+      const result = await this.llm.complete(messages, llmTools, options);
 
       // El modelo no pidió tools → terminó, devolvemos su texto final
       if (result.toolCalls.length === 0) {

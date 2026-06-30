@@ -5,10 +5,12 @@ import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 import { HealthController } from './health/health.controller';
 import { LlmModule } from './llm/llm.module';
+import { RuntimeConfigModule } from './runtime-config/runtime-config.module';
 
 @Module({
   imports: [
     AppConfigModule, // Aquí irán los módulos de dominio: PricingModule, QuoteModule, etc.
+    RuntimeConfigModule, // @Global: expone RuntimeConfigService y PromptService
     LlmModule,
   ],
   controllers: [HealthController],

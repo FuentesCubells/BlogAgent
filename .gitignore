@@ -35,3 +35,12 @@ Thumbs.db
 .vscode/*.code-workspace
 .idea/
 *.sw?
+
+
+# Agent
+prompts/master.md
+config/agent.config.json
+data/keywords.json
+examples/content.examples.json
+
+
