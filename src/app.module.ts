@@ -4,10 +4,12 @@ import { AppConfigModule } from './config/config.module';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 import { HealthController } from './health/health.controller';
+import { LlmModule } from './llm/llm.module';
 
 @Module({
   imports: [
     AppConfigModule, // Aquí irán los módulos de dominio: PricingModule, QuoteModule, etc.
+    LlmModule,
   ],
   controllers: [HealthController],
   providers: [

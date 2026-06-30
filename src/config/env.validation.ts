@@ -21,6 +21,16 @@ export const envValidationSchema = Joi.object({
     otherwise: Joi.string().optional(),
   }),
 
+  //LLM
+  LLM_PROVIDER: Joi.string().required(),
+  LLM_BASE_URL: Joi.string().required(),
+  LLM_MODEL: Joi.string().required(),
+  LLM_API_KEY: Joi.when('LLM_PROVIDER:', {
+    is: Joi.string().equal('ollama'),
+    then: Joi.string().optional(),
+    otherwise: Joi.string().required(),
+  }),
+
   // CORS
   CORS_ORIGINS: Joi.string().default('http://localhost:3001'),
 });

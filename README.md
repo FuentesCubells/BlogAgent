@@ -1,6 +1,6 @@
-# Ondula CPQ — Backend
+# Agent — Backend
 
-Servidor NestJS que expone la API del CPQ y orquesta el motor de precios.
+Servidor NestJS
 
 ## Requisitos
 
@@ -17,14 +17,14 @@ pnpm start:dev         # http://localhost:3000/api/health
 
 ## Scripts
 
-| Comando | Descripción |
-|---|---|
-| `pnpm start:dev` | Desarrollo con hot-reload |
-| `pnpm build` | Compilación de producción |
+| Comando           | Descripción                |
+| ----------------- | -------------------------- |
+| `pnpm start:dev`  | Desarrollo con hot-reload  |
+| `pnpm build`      | Compilación de producción  |
 | `pnpm start:prod` | Arranca el build compilado |
-| `pnpm test` | Tests unitarios |
-| `pnpm test:e2e` | Tests end-to-end |
-| `pnpm lint` | ESLint + Prettier |
+| `pnpm test`       | Tests unitarios            |
+| `pnpm test:e2e`   | Tests end-to-end           |
+| `pnpm lint`       | ESLint + Prettier          |
 
 ## Estructura
 
@@ -35,5 +35,3 @@ src/
 ├── health/      # GET /api/health — liveness probe
 └── main.ts      # Bootstrap (Helmet, CORS, ValidationPipe, HTTPS opcional)
 ```
-
-Ver [ARCHITECTURE.md](../ARCHITECTURE.md) y [DECISIONS.md](../DECISIONS.md) en la raíz para el detalle de diseño.
