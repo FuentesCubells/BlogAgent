@@ -1,6 +1,7 @@
-import { LLmMessage, LLmResult } from './llm.types';
+import { LlmMessage, LlmResult, LlmTool } from './llm.types';
 
 export const LLM_CLIENT = Symbol('LLM_CLIENT');
+
 export interface LlmClient {
-  complete(messages: LLmMessage[]): Promise<LLmResult>;
+  complete(messages: LlmMessage[], tools?: LlmTool[]): Promise<LlmResult>;
 }
