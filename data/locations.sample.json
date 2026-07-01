@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "description": "PLANTILLA. Copia a data/locations.json. Ubicaciones para las que generar contenido, sea cual sea tu tema/negocio. geo_type: 'city' (ciudad dentro de provincia) o 'province' (provincia entera; añade ciudad_principal).",
+    "note": "provincia/comunidad_autonoma deben ser datos verificados; sectores_locales y ciudades_cercanas, revisados a mano."
+  },
+  "locations": {
+    "ciudad-ejemplo": {
+      "ciudad": "Ciudad Ejemplo",
+      "slug": "ciudad-ejemplo",
+      "geo_type": "city",
+      "geo_term": "Ciudad Ejemplo",
+      "provincia": "Provincia Ejemplo",
+      "comunidad_autonoma": "Comunidad Ejemplo",
+      "sectores_locales": ["Sector 1", "Sector 2"],
+      "ciudades_cercanas": ["Localidad 1", "Localidad 2"],
+      "seo_priority": 50,
+      "competition": "media",
+      "status": "white"
+    },
+    "provincia-ejemplo": {
+      "ciudad": "Provincia Ejemplo",
+      "slug": "provincia-ejemplo",
+      "geo_type": "province",
+      "geo_term": "Provincia Ejemplo",
+      "provincia": "Provincia Ejemplo",
+      "comunidad_autonoma": "Comunidad Ejemplo",
+      "ciudad_principal": "Capital Ejemplo",
+      "sectores_locales": ["Sector 3"],
+      "ciudades_cercanas": ["Localidad 3", "Localidad 4"],
+      "seo_priority": 60,
+      "competition": "media",
+      "status": "green"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "_comment": "PLANTILLA de config de un agente de generación de contenido LOCALIZADO para CUALQUIER negocio o tema (no un sector concreto). Copia a config/agent.config.json. El modelo lo decide LLM_MODEL en .env, no este archivo.",
+  "site": { "name": "Tu Marca", "url": "https://tu-dominio.com/", "locale": "es-ES", "country": "ES" },
+  "generation": { "maxTokens": 4000, "temperature": 0.7 },
+  "tasks": {
+    "cityPages": { "enabled": true, "dedup": true },
+    "blog": { "enabled": false, "dedup": true, "cadencePerMonth": 3, "minPerMonth": 1 }
+  },
+  "review": { "mode": "git", "branchPrefix": "content/", "autoPublish": false }
+}

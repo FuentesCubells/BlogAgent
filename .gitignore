@@ -37,10 +37,17 @@ Thumbs.db
 *.sw?
 
 
-# Agent
-prompts/master.md
-config/agent.config.json
-data/keywords.json
-examples/content.examples.json
+# ─── Agent: datos/config/prompts REALES (propietarios) — NO versionar ───
+# Se versionan SOLO las plantillas *.sample.* (muestran la estructura sin datos reales).
+/config/*.json
+!/config/*.sample.json
+/data/*.json
+!/data/*.sample.json
+/prompts/*.md
+!/prompts/*.sample.md
+/examples/*.json
+!/examples/*.sample.json
+/examples/*.md
+!/examples/*.sample.md
 
 

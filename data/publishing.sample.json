@@ -1,0 +1,17 @@
+{
+  "_meta": { "description": "PLANTILLA. Copia a data/publishing.json. Capa de PUBLICACIÓN (no de generación): plantillas de URL/meta, enlazado interno, clusters. Adáptalo a tu dominio." },
+  "page_types": {
+    "city": {
+      "url_template": "/{slug}/",
+      "title_template": "Título para {City} - Tu Marca",
+      "meta_description_template": "Descripción SEO de tu producto o servicio en {City}.",
+      "h1_template": "H1 para {City}"
+    }
+  },
+  "internal_linking": {
+    "city_page": ["blog_posts", "contact"]
+  },
+  "clusters": {
+    "city_pages": ["ciudad-ejemplo", "provincia-ejemplo"]
+  }
+}

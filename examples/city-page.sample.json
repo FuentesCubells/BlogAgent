@@ -1,0 +1,31 @@
+{
+  "_comment": "PLANTILLA del few-shot. Este agente genera contenido LOCALIZADO para CUALQUIER negocio o tema (esto no va de un sector concreto). Ejemplo ABSTRACTO — sustitúyelo por uno REAL de calidad de tu dominio. 'input' y 'output' deben tener la forma EXACTA que produce la generación.",
+  "id": "ciudad-ejemplo-city-page",
+  "type": "city_page",
+  "input": {
+    "ciudad": "Ciudad Ejemplo",
+    "provincia": "Provincia Ejemplo",
+    "comunidad_autonoma": "Comunidad Ejemplo",
+    "geo_type": "city",
+    "sectores_locales": ["Sector 1", "Sector 2"],
+    "ciudades_cercanas": ["Localidad 1", "Localidad 2"],
+    "keyword_principal": "tu keyword principal en Ciudad Ejemplo",
+    "keywords_secundarias": ["variante de tu keyword en Ciudad Ejemplo"],
+    "notas_locales": "Hechos verificables de tu marca (p. ej. cobertura, plazos)."
+  },
+  "output": {
+    "title": "Título SEO con la keyword y Ciudad Ejemplo",
+    "meta_description": "Meta description con la keyword y una llamada a la acción (≤155 caracteres).",
+    "h1": "H1 con la keyword en Ciudad Ejemplo",
+    "hero_subheadline": "Subtítulo que resume tu propuesta de valor para Ciudad Ejemplo.",
+    "local_editorial": {
+      "heading": "Encabezado del editorial local de Ciudad Ejemplo",
+      "body": "Texto localizado que ancla tu producto o servicio al tejido económico real de la ciudad (Sector 1, Sector 2), sin inventar datos ni nombres de empresas.",
+      "sectors": [
+        { "titulo": "Sector 1", "descripcion": "Cómo tu oferta encaja con el Sector 1 local." },
+        { "titulo": "Sector 2", "descripcion": "Cómo tu oferta encaja con el Sector 2 local." }
+      ]
+    },
+    "coverage": "Ciudad Ejemplo capital y su provincia, incluidas Localidad 1 y Localidad 2."
+  }
+}

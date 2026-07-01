@@ -9,7 +9,7 @@ export interface AgentConfig {
 }
 
 export interface GenerationConfig {
-  model: string;
+  // El modelo lo posee el entorno (LLM_MODEL); aquí solo van los parámetros de generación.
   maxTokens: number;
   temperature: number;
 }

@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "description": "PLANTILLA. Copia a data/keywords.json. Solo keywords; la geografía vive en locations.json. Sustituye por las keywords de TU tema/negocio (esto no va de un sector concreto).",
+    "intents": ["generic", "personalization", "transactional", "manufacturer", "format", "sector", "b2b", "other"],
+    "priorities": ["primary", "secondary", "observed"]
+  },
+  "keyword_groups": {
+    "generic": ["tu tema {location}", "tu servicio en {location}"]
+  },
+  "targets": [
+    { "location": "ciudad-ejemplo", "intent": "generic", "keyword": "tu keyword principal en Ciudad Ejemplo", "priority": "primary" },
+    { "location": "ciudad-ejemplo", "intent": "transactional", "keyword": "contratar tu servicio en Ciudad Ejemplo", "priority": "secondary" }
+  ],
+  "gsc_signals": {
+    "ciudad-ejemplo": [
+      { "query": "tu tema ciudad ejemplo", "impressions": 10, "position": 25.0, "intent": "generic" }
+    ]
+  }
+}

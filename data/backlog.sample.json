@@ -1,0 +1,7 @@
+{
+  "_meta": { "description": "PLANTILLA. Copia a data/backlog.json. Cola de qué generar, por prioridad (desc). 'status' lo actualiza la persistencia (todo/pending/published)." },
+  "backlog": [
+    { "type": "city_page", "target": "provincia-ejemplo", "priority": 60, "status": "todo" },
+    { "type": "city_page", "target": "ciudad-ejemplo", "priority": 50, "status": "todo" }
+  ]
+}

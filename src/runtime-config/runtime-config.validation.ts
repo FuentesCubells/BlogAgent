@@ -7,7 +7,6 @@ import * as Joi from 'joi';
  */
 export const agentConfigSchema = Joi.object({
   generation: Joi.object({
-    model: Joi.string().required(),
     maxTokens: Joi.number().integer().positive().required(),
     temperature: Joi.number().min(0).max(2).required(),
   }).required(),
